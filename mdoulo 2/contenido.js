@@ -434,7 +434,7 @@ console.log(suma);
 function calcularArea(radio) {
   return Math.PI * radio * radio;
 }
-
+Ñ
 //? **Resumen**
 //* Declara variables con let y const.
 //* Usa nombres claros y descriptivos.
