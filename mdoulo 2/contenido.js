@@ -2,8 +2,16 @@
 
 //? **Sección 1: Variables**
 
-//! 1. Declaración de variables
-// En JavaScript, una variable es un contenedor para almacenar datos. Podemos declararlas usando:
+// //! 1. Declaración de variables
+// z='hola'
+// x=2
+// y=5
+// z+3=7
+// x+3=5
+// y+3=8
+
+// En JavaScript, una variable es un contenedor para almacenar datos. 
+// Podemos declararlas usando:
 //* let: Para variables que pueden cambiar.
 //* const: Para constantes que no cambian.
 //* var: Evitar usarlo, ya que tiene limitaciones de ámbito.
@@ -20,10 +28,11 @@
     //* 2. Declaración de una variable usando let ó var asignando un valor
     let nombreUsuario1 = "Juan"; 
     let nombreUsuario1 = "Juana"; 
+    console.log(nombreUsuario1); 
+    nombreUsuario1="Juana"
 
     var nombreUsuario2 = "Juan";
-    nombreUsuario2 = "Juana";
-    console.log(nombreUsuario1); 
+    var nombreUsuario2 = "Juana";
     console.log(nombreUsuario2); 
     
     var apellido='Ramirez'
@@ -36,27 +45,31 @@
         
     //* Ejemplo 1  Declaración sin valor ❌
     let nom
-    console.log(nom);
+    console.log(nom);//undefined
+    nom=4
+    console.log(nom); // 4
+    const PI
+    console.log(PI);
     
     // const PI 
 
     //* Ejemplo 2  Declaración con valor ✔
     const PI = 3.14;
     console.log(PI);
-
-
-    
-
-    
+    PI='hola'
+    console.log(PI);
 
 //! Buenas prácticas:
 //* Utiliza nombres descriptivos.
 //* Ejemplo 
     //* Quiero asignar el nombre de usuario Rosa 👧 a una variable 
     let userName="rosa"
-
+    let x="rosa"
 //* Usa camelCase para facilitar la lectura.
     let firstName    
+
+// El sabio sape que pude campiar de ofinion 
+// el neqio , no camkia de opikion
     
 //! 2. Reglas de nombres
 //* No pueden comenzar con números. 
@@ -64,43 +77,91 @@ let 123nombre=12
 //* Pueden usar letras, dígitos, $ y _.
 let nombre2='rosa'
 console.log(nombre2);
+let nombre3='juan'
+console.log(nombre3);
+let _nombreUser='Adela'
+console.log(_nombreUser);
+let $nombreUser='Adela'
+console.log($nombreUser);
+
 
 //* Sensibles a mayúsculas (edad y Edad son variables diferentes).
 let edad=35
 let Edad=36
-console.log(edad);
-
+let nombre='juan'
+Nombre='juana'
+console.log(Nombre);
+console.log(Edad);
 
 //! 3. Ámbito de variables
-//* let y const tienen ámbito de bloque.
-//* var tiene ámbito de función o global.
+//* let y const tienen ámbito de bloque. //scope -> el alcance que tiene una variable en su contexto
+//* var tiene ámbito de función o global. //scope
+
+//Peru
+let presidentePeru='👴'
+{
+  {let departamentoP1='Lima'
+    console.log(presidentePeru);
+  }
+  {let departamentoP2='Huancayo'
+    console.log(presidentePeru);
+    
+  }
+  {let departamentoP3='chiclayo'}
+  {let departamentoP4='amazonas'}
+  {let departamentoP5='Tumbes'}
+  {let departamentoP6='Huánuco'} 
+  {let departamentoP7='Áncash'}
+  {let departamentoP8='Cusco'}
+}
+//Bolivia
+let presidenteBolivia='👨‍🦱'
+{
+ {
+  let departamentoB1='La Paz'
+  console.log(presidenteBolivia);
+  
+}
+{
+  let departamentoB2='Cochabamba'
+  console.log(presidenteBolivia);
+ }
+ {
+  let departamentoB3='Chuquisaca'
+ }
+}
+
 
 //! Ejemplo:
 //* Definimos el bloque de una programa mediante llaves {}
-
-
 {
-  let edad = 25; // Solo accesible dentro del bloque, pero fuera del bloque no está definido
+  let edad = 25 // Solo accesible dentro del bloque, pero fuera del bloque no está definido
   {
-    edad=45
-    let edad=36 //sombreado
-    console.log(edad); //36
+    let edad=40
+    edad=36
+    console.log(edad);
+    
   }
   console.log(edad); //25
+}
   console.log(nombre);
   
-}
 console.log(edad); // Error: edad no está definido
 
 {
   var edadVar=23
-  console.log(edadVar);
+  console.log(edadVar); //23
   {
     edadVar=35
+    var edadVar=34
+    console.log(edadVar);
+    
     let nombre='yr'
     var edadVar1=56
     console.log(edadVar1);
   }
+  console.log(edadVar);
+  
 }
 console.log(nombre);
   let _nombre // variables globales
@@ -144,15 +205,11 @@ console.log(typeof activo); // boolean
     console.log(nombre.length);
 //! Splice
 
+// El método splice permite agregar, eliminar o reemplazar elementos en un arreglo. Modifica el arreglo original.
     let nombre='roberto'
-    console.log(typeof nombre);
-    
-    let edad3=4
-    
-    console.log(nombre.slice(0,true));
+    console.log(nombre.slice(2,3));
     console.log(nombre);
 
-// El método splice permite agregar, eliminar o reemplazar elementos en un arreglo. Modifica el arreglo original.
 //* Ejemplo:
 let names = ["Olivia", "Emma", "Mateo", "Samuel"];
 names.splice(2, 1, "Lucas"); // Reemplaza 1 elemento en la posición 2
@@ -172,7 +229,7 @@ console.log(text);
 
 
 let sentence = "Hola a todos";
-let words = sentence.split(3);
+let words = sentence.split(' ');
 console.log(words); // -> ["Hola", "a", "todos"]
 
 //! 3. Conversiones explícitas
@@ -237,11 +294,14 @@ console.log(names[5]); // -> Amelia
 let names = ["Olivia", "Emma", "Mateo", "Samuel"];
 console.log(names.indexOf("Mateo")); // -> 2
 console.log(names.indexOf("Victor")); // -> -1
+console.log(names.indexOf("Leonardo")); // -> -1
 
 //! Push
 // El método push coloca un elemento al final del arreglo y aumenta su longitud.
 //* Ejemplo:
 let names = ["Olivia", "Emma", "Mateo", "Samuel"];
+console.log(names);
+
 names.push("Amelia");
 console.log(names.length); // -> 5
 console.log(names); // -> ["Olivia", "Emma", "Mateo", "Samuel", "Amelia"]
@@ -331,6 +391,7 @@ console.log(usuario.edad);
 // Ejemplo con `var`:
 console.log(nombre); // -> undefined
 var nombre = "Juan";
+console.log(nombre);
 
 
 //! 3. Hoisting con funciones

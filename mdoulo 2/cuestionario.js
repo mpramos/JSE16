@@ -15,9 +15,9 @@
 //* d) user variable;
 
 //! 3. Analice el siguiente código:
-let value = 100;
-value = 200;
-let value = 300;
+// let value = 100;
+// value = 200;
+// let value = 300;
 //  ¿Qué ocurrirá?
 //* Opciones 🏝:
 //* a) Error por re-declaración.
@@ -43,8 +43,8 @@ console.log(Count);
 //* d) let const pi = 3.14;
 
 //! 6. ¿Cuál es el tipo de dato predeterminado de una variable declarada pero no inicializada?
-let nombre
-console.log(nombre);
+// let nombre
+// console.log(nombre);
 
 //* Opciones 🏝:
 //* a) null.
@@ -53,9 +53,9 @@ console.log(nombre);
 //* d) NaN.
 
 //! 7. ¿Qué resultado obtendremos al ejecutar el siguiente código?
-let x = '5';
-let y = Number(x);
-console.log(typeof y);
+// let x = '5';
+// let y = Number(x);
+// console.log(typeof y);
 //* Opciones 🏝:
 //* a) string.
 //* b) number
@@ -102,7 +102,7 @@ console.log(Number('5'));
 //* d) Error.
 
 //! 12. ¿Qué método utilizamos para eliminar el primer elemento de un arreglo?
-let arr = [10, 20, 30];
+// let arr = [10, 20, 30];
  arr.shift()
  console.log(arr);
  
@@ -232,7 +232,7 @@ console.log(_numeros.includes(9));
 
 
 //! 23. ¿Qué valor tendrá 'x' después de ejecutar el siguiente código?
-let x = '10' + 5;
+// let x = '10' + 5;
 //* Opciones 🏝:
 //* a) 15.
 //* b) '105'
