@@ -4,13 +4,15 @@
 // Los operadores en JavaScript permiten realizar operaciones matemáticas, lógicas y de asignación de valores.
 //* Ejemplo:
 let suma = 10 + 5; // 15
+console.log(suma);
 let resta = 20 - 10; // 10
+console.log(resta);
 let multiplicacion = 4 * 5; // 20
+console.log(multiplicacion);
 let division = 20 / 4; // 5
-let modulo = 3 % 2; // 1
+console.log(division);
+let modulo = 4 % 2; //  0
 console.log(modulo);
-
-
 let potencia = 3 ** 3; // 27
 console.log(potencia);
 
@@ -18,9 +20,9 @@ console.log(potencia);
 // Asignan valores a las variables y permiten operaciones combinadas.
 //* Ejemplo:
 let x = 10; // Asignación inicial
-x += 5; // Suma y asignación: 15
+x += 5; // Suma y asignación: 15 => x = 15 
 console.log(x);
-x -= 3; // Resta y asignación: 12
+x -= 3; // Resta y asignación: 12 => x = 15 - 3
 console.log(x);
 x *= 2; // Multiplicación y asignación: 24
 console.log(x);
@@ -46,8 +48,11 @@ console.log(a ** b); // 512
 //! Operadores Aritméticos Unarios
 // Operan sobre un solo operando.
 //* Ejemplo:
-let c = '5';
-let conversionNumero=+c
+let c = 'hola';
+let b= +c
+console.log(typeof b);
+console.log(b);
+let conversionNumero= +c
 console.log(conversionNumero); // 5
 console.log( typeof conversionNumero); // 5
 console.log(+c); // 5
@@ -57,19 +62,11 @@ console.log(-c); // -5
 // Incrementan o decrementan el valor de una variable.
 //* Ejemplo:
 let d = 7;
-console.log(++d); // 8 (post-incremento)
-console.log(d);
-
 console.log(d--); // 8 (post-decremento)
 console.log(d);
-
 console.log(--d); // 8 (pre-decremento)
-
 console.log(++d); // 8 (pre-incremento)
-// for (let index = array.length-1; index >=0; index--) {
-//     const element = array[index];
-    
-// }
+console.log(d++); // 8 (post-incremento)
 
 //! Operadores Lógicos
 // Realizan operaciones lógicas sobre valores booleanos.
@@ -96,7 +93,7 @@ console.log(false || false)
 console.log(!true);
 console.log(!false);
 
-//! Valores falsos 👉 false 0 '' null
+//! Valores falsos 👉 false 0 '' null undefined
 //! Valores Verdaderos 👉 true 1 5.6 'hola'
 
 //! Operadores Lógicos con Valores No Booleanos
