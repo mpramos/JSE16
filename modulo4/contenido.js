@@ -7,7 +7,7 @@
      // Código a ejecutar si la condición es verdadera
 // }
 // Ejemplo:
-let edad = 20;
+let edad = 10;
 if (edad >= 18) {
     console.log("Eres mayor de edad");
 }
@@ -20,10 +20,10 @@ if (numero > 5) {
     console.log("El número es mayor que 5");
 }
 
-//! 3. El si...else
+//! 3. El if...else
 // La instrucción `if...else` ejecuta un bloque de código si la condición es verdadera, y otro si es falsa.
 // Ejemplo:
-let esEstudiante = true;
+let esEstudiante = 0;
 if (esEstudiante) {
     console.log("Tienes descuento");
 } else {
@@ -44,17 +44,35 @@ if (calificacion >= 90) {
     console.log("Excelente");
 } else if (calificacion >= 70) {
     console.log("Aprobado");
-} else {
-    console.log("Reprobado");
+} else if (calificacion >=50){
+    console.log("Aprobado 1");
+} else if (calificacion >=40){
+    console.log("Aprobado 1");
+} else if (calificacion >=30){
+    console.log("Aprobado 1");
+} else if (calificacion >=20){
+    console.log("Aprobado 1");
 }
 
-//! 5. Operador condicional
+
+
+
+//! 5. Operador ternario
 // El operador ternario es una forma compacta de escribir condiciones.
 // Sintaxis: condición ? valor_si_verdadero : valor_si_falso;
 // Ejemplo:
 let activo = true;
 let estado = activo ? "Encendido" : "Apagado";
 console.log(estado);
+// let estado
+// if (activo) {
+//     estado='Encendido'
+// }
+// else{
+//     estado='Apagado'
+
+// }
+// console.log(estado);
 
 //! 6. El interruptor... Enunciado del caso
 // El `switch` evalúa una expresión y ejecuta el bloque de código correspondiente al caso coincidente.
