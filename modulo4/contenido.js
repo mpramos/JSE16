@@ -111,8 +111,8 @@ while (contador < 5) {
 //! 9. El bucle for
 // La instrucción `for` ejecuta un bloque de código un número determinado de veces.
 // Ejemplo:
-for (let i = 0; i < 5; i++) {
-    console.log("Iteración: " + i);
+for (let i = 0; i < 5; i++) {             // 
+    console.log("Iteración: " + i); // 
 }
 
 //! 10. El bucle do...while
@@ -127,18 +127,24 @@ do {
 //! 11. for...in
 // El bucle `for...in` recorre las propiedades de un objeto.
 // Ejemplo:
-let persona = { nombre: "Ana", edad: 25 };
+let persona = { nombre: "Ana", edad: 25 , telefono:23423434};
+// console.log(persona['edad']);
+// console.log(persona.nombre);
 for (let propiedad in persona) {
-    console.log(propiedad + ": " + persona[propiedad]);
+    console.log(propiedad + ": "   + persona[propiedad]);
 }
 
 //! 12. for...of
 // El bucle `for...of` recorre los valores de un iterable, como un array.
 // Ejemplo:
 let frutas = ["Manzana", "Banana", "Cereza"];
+// console.log(frutas[2]);
+// console.log(frutas[1]);
+
 for (let fruta of frutas) {
     console.log(fruta);
 }
+
 
 
 //! 13. Break y Continue
@@ -153,12 +159,16 @@ for (let i = 0; i < 10; i++) {
 //! 14. Iterar arrays en orden inverso
 // Puedes usar un bucle `for` para recorrer un array desde el último elemento.
 // Ejemplo:
-let numeros = [1, 2, 3, 4, 5];
+let numeros = [1, 2, 3, 4, 9];
 console.log(numeros.reverse());
-
+// console.log(numeros.length);
+// console.log(numeros[numeros.length-1]);
+let arr=[]
 for (let i = numeros.length - 1; i >= 0; i--) {
-    console.log("Elemento: " + numeros[i]);
+    arr.push(numeros[i])
 }
+console.log(arr);
+
 
 //! 15. Combinando condicionales y bucles
 // Es común usar condicionales dentro de bucles para filtrar valores o realizar acciones específicas.
