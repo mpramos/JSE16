@@ -9,45 +9,59 @@ Las excepciones son errores que pueden ser controlados con bloques específicos.
 */
 
 //! Ejemplo de un error
-console.log('juana');
-console.log(10 / ); // SyntaxError: Unexpected token ')'
+if(){}
 
+console.log('juana');
 
 //! Ejemplo de una excepción
+console.log(variableNoDefinida);
+console.log('hola');
+
 try {
   console.log(variableNoDefinida);
 } catch (error) {
   console.log("Error atrapado:", error.message); // Output: Error atrapado: variableNoDefinida is not defined
 }
 console.log('hola');
-  
-  //! 6.0.3 Errores en JavaScript
-  /*
-  En JavaScript existen varios tipos de errores:
-  - SyntaxError
-  - ReferenceError
-  - TypeError
-  - RangeError
-  */
-  
-  //! Ejemplo de ReferenceError
-  // console.log(noDeclarada); // ReferenceError: noDeclarada is not defined
-  console.log(nombre);
-  
+
+//! 6.0.3 Errores en JavaScript
+/*
+En JavaScript existen varios tipos de errores:
+- ReferenceError
+- SyntaxError
+- TypeError
+- RangeError
+*/
+
+//! Ejemplo de ReferenceError
+// console.log(noDeclarada); // ReferenceError: noDeclarada is not defined
+const nombre='juana'
+console.log(nombre);
+hello
+hi
+hola
+holf
+//! Ejemplo de SyntaxError
+console.log(10 / ); // SyntaxError: Unexpected token ')'
+
   //! Ejemplo de TypeError
   let algo='sjdjdjdjdjJ'
   let algunNumero=45
   // console.log(algo.toUpperCase());
-  // console.log(algo.toLowerCase());
+  console.log(algo.toLowerCase());
   console.log(algunNumero.toLowerCase());
   
   num.toUpperCase()
+
   //! Ejemplo de Error de rango
   let frutas=['manzana', 'platano','cereza']
 console.log(frutas[5]);
+console.log(frutas[10]);
+console.log(frutas[20]);
+// console.log(frutas.slice(0,1));
 console.log(frutas.slice(10,20));
 
-let comidas= Array(5)
+let comidas= Array(-5)
 console.log(comidas);
   
   //! 6.1 Sección 2 – Errores y Excepciones – Parte 2
@@ -62,6 +76,8 @@ console.log(comidas);
   } catch (error) {
     console.log("Error al parsear JSON:", error.message);
   }
+  console.log('hola');
+  
   
   //! 6.1.4 Bloque finally
   /*
@@ -87,9 +103,6 @@ console.log(comidas);
     console.log('suceda de todos modos');
   }
   
-
-
-
   //! 6.1.6 Lanzar excepciones personalizadas con throw
   /*
   Podemos crear nuestras propias excepciones utilizando la palabra clave `throw`.
@@ -104,7 +117,10 @@ console.log(comidas);
     }
   } catch (error) {
     console.log("Error personalizado:", error.message);
+  } finally{
+    console.log('sucede de todos modos');
   }
+
   
   //! 6.2 Sección 3 – Depuración de código y solución de problemas
   
@@ -149,7 +165,6 @@ console.log(comidas);
   /*
   Podemos medir el tiempo de ejecución de fragmentos de código.
   */
-  
   console.time("Tiempo de ejecución");
   for (let i = 0; i < 1000000; i++) {console.log(i);
   } // Operación pesada
@@ -159,7 +174,6 @@ console.log(comidas);
   while (i< 1000000) {
     console.log(i);
     i++
-    
   }
   console.timeEnd("Tiempo de ejecución while"); // Muestra el tiempo en ms
   

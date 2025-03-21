@@ -1,3 +1,20 @@
+
+let name1='Maxwell'  
+let phone1='(0191) 719 6495'
+let email1='Curabitur.egestas.nunc@nonummyac.co.uk'
+
+let name2='Raja Villarreal'  
+let phone2='0866 398 2895'
+let email2='posuere.vulputate@sed.com'
+
+let name3='Helen Richards'  
+let phone3='0800 1111'
+let email3='libero@convallis.edu'
+
+
+console.log(`${name1}/ ${phone1} / ${email1} `);
+console.log(`${name3}/ ${phone3} / ${email3} `); /*✔*/
+
 let contacts=[
         {
         name: "Maxwell Wright",
@@ -29,17 +46,5 @@ let nuevoContacto={
     email: "risus.Quisque@urna.ca"
 }
 contacts.push(nuevoContacto)
-
-let nameP= prompt('ingrese el nombre del nuevo contacto')
-let phoneP= prompt('ingrese el telefono del nuevo contacto')
-let emailP= prompt('ingrese el email del nuevo contacto')
-
-contacts.push({ 
-    name: nameP,
-    phone: phoneP,
-    email: emailP
-})
-console.log(contacts);
-
-
 console.log(`${contacts[contacts.length-1].name} / ${contacts[contacts.length-1].phone} / ${contacts[contacts.length-1].email} `);
+
