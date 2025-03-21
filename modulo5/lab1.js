@@ -25,6 +25,11 @@ let contacts=[
         phone: "0800 1111",
         email: "libero@convallis.edu"
     },
+    {
+        name: "Aelen Richards",
+        phone: "0800 1111",
+        email: "libero@convallis.edu"
+    },
     
 ]
 let showContact=(lista,indice)=> {
@@ -45,7 +50,6 @@ let showAllContacts=(lista)=>{
         
     }
 }
-
 let addNewContact=(lista,nombre, telefono, email )=>{
 if (lista instanceof Array && nombre && telefono && email) {
     lista.push({ 
@@ -64,7 +68,8 @@ while (desicion) {
         Opcion 1: Para mostrar el primer contacto 0
         Opcion 2: Para mostrar el ultimo contacto length-1
         Opcion 3: Para agregar un nuevo contacto
-        Opcion 4: Para salir
+        Opcion 4: Para ordenar los contactos 
+        Opcion 5: Para salir
         `, 1)
         
 switch (respuesta) {
@@ -84,9 +89,58 @@ switch (respuesta) {
                  addNewContact(contacts, nameP, phoneP, emailP)
                  showAllContacts(contacts)
                 break;
-                case '4':
+            case '4':
+                    let opcion= prompt(`
+                        🐱‍👤 Desea filtrar los contactos por:
+                        Opcion 1: nombre 👨
+                        Opcion 2: Telefono 📞
+                        Opcion 3: Email 📨
+                        `, 1)
+                    let opcionConvertido= Number(opcion)    
+                    console.log(' tipo de opcion',typeof opcionConvertido);
+                   if (opcionConvertido===1) {
+                   let contactsNameSort=contacts.sort((a,b)=>{
+                       let retVal = 0;
+                       if (a.name > b.name) {
+                           retVal = 1;
+                        } else {
+                            retVal = -1;
+                        }
+                        return retVal;
+                   });
+                   alert(`Contactos ordenados por nombre ${showAllContacts(contactsNameSort)}`)
+                } else if(opcionConvertido===2){
+                       let contactsNameSort=contacts.sort((a,b)=>{
+                           let retVal = 0;
+                           if (a.phone > b.phone) {
+                               retVal = 1;
+                            } else {
+                                retVal = -1;
+                            }
+                            return retVal;
+                       });
+                       alert(`Contactos ordenados por telefono ${showAllContacts(contactsNameSort)}`)
+                    
+                } else if(opcionConvertido===3){
+                       let contactsNameSort=contacts.sort((a,b)=>{
+                           let retVal = 0;
+                           if (a.email > b.email) {
+                               retVal = 1;
+                            } else {
+                                retVal = -1;
+                            }
+                            return retVal;
+                       });
+                       alert(`Contactos ordenados por email ${showAllContacts(contactsNameSort)}`)
+                     
+                   } else{
+
+                   }
+        
+                                   break;
+                case '5':
                     alert(`🐱‍👤 Gracias por tu tiempo`)
-                    desicion=false
+                    desicion=!desicion
                     default:
         break;
     }
