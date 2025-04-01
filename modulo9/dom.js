@@ -1,0 +1,155 @@
+// 1. ¿Qué es el DOM?
+// El DOM (Document Object Model) es una representación del documento HTML que permite su manipulación.
+
+// 2. Obtener elementos del DOM:
+
+// Obtener un elemento por ID
+const elementoPorId = document.getElementById('miId');
+console.log(elementoPorId);
+
+// Obtener elementos por nombre de etiqueta
+const elementosPorTag = document.getElementsByTagName('p');
+console.log(elementosPorTag);
+
+// Obtener elementos por nombre
+const elementosPorNombre = document.getElementsByName('nombreElemento');
+console.log(elementosPorNombre);
+
+// 3. Usar querySelector y querySelectorAll
+
+// Obtener el primer elemento que coincida con el selector CSS
+const primerElemento = document.querySelector('.miClase');
+console.log(primerElemento);
+
+// Obtener todos los elementos que coincidan con el selector CSS
+const todosLosElementos = document.querySelectorAll('p');
+console.log(todosLosElementos);
+
+// Iterar sobre una colección de elementos HTML
+
+// Convertir a un array y usar forEach
+Array.from(todosLosElementos).forEach(elemento => {
+    console.log(elemento.textContent);
+});
+
+// Usar un bucle for clásico
+for (let i = 0; i < todosLosElementos.length; i++) {
+    console.log(todosLosElementos[i].textContent);
+}
+
+// Usar for...of (más moderno y legible)
+for (const elemento of todosLosElementos) {
+    console.log(elemento.textContent);
+}
+
+/*
+¿Por qué no se usa forEach directamente en HTMLCollection o NodeList?
+- HTMLCollection no es un array real, por lo que no tiene el método forEach.
+- querySelectorAll devuelve un NodeList, que sí tiene forEach en navegadores modernos, pero HTMLCollection (como el de getElementsByTagName) no lo tiene.
+- Por eso, en algunos casos, hay que convertir HTMLCollection a un array con Array.from().
+*/
+
+// 4. Agregar y eliminar atributos
+
+// Agregar un atributo con setAttribute
+const elemento = document.getElementById('miId');
+elemento.setAttribute('data-info', 'valor');
+
+// Usos prácticos de setAttribute
+// - Cambiar el href de un enlace
+document.getElementById('miEnlace').setAttribute('href', 'https://www.google.com');
+
+// - Agregar un atributo alt a una imagen
+document.getElementById('miImagen').setAttribute('alt', 'Descripción de la imagen');
+
+// - Deshabilitar un botón
+document.getElementById('miBoton').setAttribute('disabled', 'true');
+
+// - Cambiar el tipo de un input
+document.getElementById('miInput').setAttribute('type', 'password');
+
+// Eliminar un atributo con removeAttribute
+elemento.removeAttribute('data-info');
+
+// Agregar una clase con classList
+const otroElemento = document.querySelector('.miClase');
+otroElemento.classList.add('nuevaClase');
+
+// Eliminar un elemento del DOM con removeChild
+const padre = document.getElementById('contenedor');
+const hijo = document.getElementById('elementoAEliminar');
+padre.removeChild(hijo);
+
+// Agregar un elemento al DOM con appendChild
+const nuevoElemento = document.createElement('div');
+nuevoElemento.textContent = 'Soy un nuevo elemento';
+padre.appendChild(nuevoElemento);
+
+// 5. Manipulación del contenido
+
+// Modificar el texto con textContent
+elemento.textContent = 'Nuevo texto';
+
+// Modificar el HTML interno con innerHTML
+elemento.innerHTML = '<span>Contenido nuevo</span>';
+
+// 6. Escuchar eventos
+
+// Evento click
+const boton = document.getElementById('miBoton');
+boton.addEventListener('click', function() {
+    alert('Botón clickeado');
+});
+
+// Evento mouseover (cuando el ratón pasa sobre un elemento)
+boton.addEventListener('mouseover', function() {
+    console.log('El ratón está sobre el botón');
+});
+
+// Evento mouseout (cuando el ratón sale del elemento)
+boton.addEventListener('mouseout', function() {
+    console.log('El ratón salió del botón');
+});
+
+// Evento keydown (cuando se presiona una tecla)
+document.addEventListener('keydown', function(event) {
+    console.log('Tecla presionada: ', event.key);
+});
+
+// Evento keyup (cuando se suelta una tecla)
+document.addEventListener('keyup', function(event) {
+    console.log('Tecla soltada: ', event.key);
+});
+
+// Evento submit (cuando se envía un formulario)
+const formulario = document.getElementById('miFormulario');
+formulario.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que la página se recargue
+    console.log('Formulario enviado');
+});
+
+// Evento change (cuando cambia un input, select o textarea)
+const inputTexto = document.getElementById('miInput');
+inputTexto.addEventListener('change', function() {
+    console.log('Valor cambiado:', inputTexto.value);
+});
+
+// Evento focus (cuando un input gana el foco)
+inputTexto.addEventListener('focus', function() {
+    console.log('El input ha ganado el foco');
+});
+
+// Evento blur (cuando un input pierde el foco)
+inputTexto.addEventListener('blur', function() {
+    console.log('El input ha perdido el foco');
+});
+
+// Evento resize (cuando se cambia el tamaño de la ventana)
+window.addEventListener('resize', function() {
+    console.log('Se ha cambiado el tamaño de la ventana');
+});
+
+// Evento scroll (cuando se desplaza la página)
+window.addEventListener('scroll', function() {
+    console.log('Se está haciendo scroll en la página');
+});
