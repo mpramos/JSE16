@@ -1,45 +1,81 @@
 // 1. ¿Qué es el DOM?
-// El DOM (Document Object Model) es una representación del documento HTML que permite su manipulación.
+// El DOM (Document Object Model) 
+// es una representación del documento HTML que permite su manipulación.
 
 // 2. Obtener elementos del DOM:
 
 // Obtener un elemento por ID
 const elementoPorId = document.getElementById('miId');
-console.log(elementoPorId);
+// console.log(elementoPorId);
 
 // Obtener elementos por nombre de etiqueta
 const elementosPorTag = document.getElementsByTagName('p');
-console.log(elementosPorTag);
+for (const elemento of elementosPorTag) {
+//    console.log(elemento);
+}
+
 
 // Obtener elementos por nombre
-const elementosPorNombre = document.getElementsByName('nombreElemento');
-console.log(elementosPorNombre);
+const elementosPorNombre = document.getElementsByName('nombre');
+// console.log(elementosPorNombre);
+// Obtener elementos por clase
+
+const elementosPorClase= document.getElementsByClassName('miClase')
+console.log(elementosPorClase);
+
+
+for (const elemento of elementosPorClase) {
+//    console.log(elemento);
+}
+
 
 // 3. Usar querySelector y querySelectorAll
 
 // Obtener el primer elemento que coincida con el selector CSS
+console.log('QUERY SELECTOR');
+
 const primerElemento = document.querySelector('.miClase');
 console.log(primerElemento);
+const primerosElementos = document.querySelectorAll('.miClase');
+for (const element of primerosElementos) {
+    console.log(element);
+    
+}
 
 // Obtener todos los elementos que coincidan con el selector CSS
 const todosLosElementos = document.querySelectorAll('p');
 console.log(todosLosElementos);
+console.log('QUERY SELECTOR ALL et');
+
+// for (const element of todosLosElementos) {
+//     console.log(element);
+    
+// }
+todosLosElementos.forEach(elemento=>console.log(elemento))
+
+// Obtener el elemento por Id
+let idP=document.querySelector('#miId')
+console.log('Obtener el elemento por Id');
+
+console.log(idP);
+
+
 
 // Iterar sobre una colección de elementos HTML
 
 // Convertir a un array y usar forEach
 Array.from(todosLosElementos).forEach(elemento => {
-    console.log(elemento.textContent);
+    // console.log(elemento.textContent);
 });
 
 // Usar un bucle for clásico
 for (let i = 0; i < todosLosElementos.length; i++) {
-    console.log(todosLosElementos[i].textContent);
+    // console.log(todosLosElementos[i].textContent);
 }
 
 // Usar for...of (más moderno y legible)
 for (const elemento of todosLosElementos) {
-    console.log(elemento.textContent);
+    // console.log(elemento.textContent);
 }
 
 /*
@@ -61,19 +97,21 @@ document.getElementById('miEnlace').setAttribute('href', 'https://www.google.com
 
 // - Agregar un atributo alt a una imagen
 document.getElementById('miImagen').setAttribute('alt', 'Descripción de la imagen');
+document.getElementById('miImagen').setAttribute('src', 'https://rickandmortyapi.com/api/character/avatar/213.jpeg');
 
 // - Deshabilitar un botón
-document.getElementById('miBoton').setAttribute('disabled', 'true');
+// document.getElementById('miBoton').setAttribute('disabled', 'true');
 
 // - Cambiar el tipo de un input
 document.getElementById('miInput').setAttribute('type', 'password');
 
 // Eliminar un atributo con removeAttribute
-elemento.removeAttribute('data-info');
+// elemento.removeAttribute('alt');
 
 // Agregar una clase con classList
-const otroElemento = document.querySelector('.miClase');
-otroElemento.classList.add('nuevaClase');
+const otroElemento = document.querySelectorAll('.miClase');
+// otroElemento.classList.add('nuevaClase');
+otroElemento.forEach(elemento=> elemento.classList.add('nuevaClase'))
 
 // Eliminar un elemento del DOM con removeChild
 const padre = document.getElementById('contenedor');
@@ -103,12 +141,12 @@ boton.addEventListener('click', function() {
 
 // Evento mouseover (cuando el ratón pasa sobre un elemento)
 boton.addEventListener('mouseover', function() {
-    console.log('El ratón está sobre el botón');
+    console.log('El mouse está sobre el botón');
 });
 
 // Evento mouseout (cuando el ratón sale del elemento)
 boton.addEventListener('mouseout', function() {
-    console.log('El ratón salió del botón');
+    console.log('El mouse salió del botón');
 });
 
 // Evento keydown (cuando se presiona una tecla)
