@@ -15,9 +15,9 @@ const miPromesa = new Promise((resolve, reject) => {
 });
 
 // Uso de then y catch para manejar la promesa
-miPromesa
-    .then(resultado => console.log(resultado))
-    .catch(error => console.error(error));
+// miPromesa
+//     .then(resultado => console.log(resultado))
+//     .catch(error => console.error(error));
 
 // 2. Uso de async y await
 // Las funciones async permiten escribir código asincrónico de forma más sencilla.

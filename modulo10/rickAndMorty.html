@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rick and morty</title>
+</head>
+
+<body>
+    <h1>Personajes de Rick and Morty</h1>
+    <div class="container" id="character-container">
+    </div>
+    <script>
+        const fetchCharacters= async () => {
+            try {
+                const respuesta= await fetch('https://rickandmortyapi.com/api/character')
+                const data=  await respuesta.json()
+                displayCharacters(data.results)
+            } catch (error) {
+                console.error('Error al obtener los personajes', error)
+            }
+        }
+        
+        const displayCharacters =(characters)=>{
+            const container= document.getElementById('character-container')                
+            container.innerHTML = ''
+            characters.forEach(character => {
+                const card= document.createElement('div')
+                card.innerHTML=`
+                <img src=${character.image} alt=${character.name}>
+                <h3>${character.name}</h3>
+                <p>${character.status} - ${character.species}</p>
+                `
+                container.appendChild(card)
+            });
+        }
+        fetchCharacters()
+        </script>
+</body>
+</html>
