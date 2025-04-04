@@ -48,3 +48,9 @@ async function obtenerUsuarios() {
 
 // Llamar a la función que obtiene los usuarios
 obtenerUsuarios();
+
+
+
+fetch('https://fakestoreapi.com/products')
+  .then(response => response.json())
+  .then(data => console.log(data));
